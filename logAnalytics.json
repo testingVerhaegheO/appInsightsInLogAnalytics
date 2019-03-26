@@ -75,48 +75,6 @@
             "product": "[Concat('OMSGallery/', variables('ApplicationInsights').GalleryName)]",
             "promotionCode": ""
           }
-      },
-      {
-          "apiVersion": "2015-11-01-preview",
-          "location": "[resourceGroup().location]",
-          "tags": {
-          },
-          "name": "[variables('AzureActivity').Name]",
-          "type": "Microsoft.OperationsManagement/solutions",
-          "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.OperationsManagement/solutions/', variables('AzureActivity').Name)]",
-          "dependsOn": [
-            "[concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
-          ],
-          "properties": {
-            "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
-          },
-          "plan": {
-            "name": "[variables('AzureActivity').Name]",
-            "publisher": "Microsoft",
-            "product": "[Concat('OMSGallery/', variables('AzureActivity').GalleryName)]",
-            "promotionCode": ""
-          }
-      },
-      {
-          "apiVersion": "2015-11-01-preview",
-          "location": "[resourceGroup().location]",
-          "tags": {
-          },
-          "name": "[variables('AzureWebAppsAnalytics').Name]",
-          "type": "Microsoft.OperationsManagement/solutions",
-          "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.OperationsManagement/solutions/', variables('AzureWebAppsAnalytics').Name)]",
-          "dependsOn": [
-            "[concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
-          ],
-          "properties": {
-            "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
-          },
-          "plan": {
-            "name": "[variables('AzureWebAppsAnalytics').Name]",
-            "publisher": "Microsoft",
-            "product": "[Concat('OMSGallery/', variables('AzureWebAppsAnalytics').GalleryName)]",
-            "promotionCode": ""
-          }
       }
      ]
   }
