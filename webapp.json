@@ -175,66 +175,6 @@
                 "applicationId": "[parameters('siteName')]",
                 "workspaceResourceId": "[reference(concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-11-01-preview').customerId]"
             }
-        },
-        {
-            "apiVersion": "2015-11-01-preview",
-            "location": "[resourceGroup().location]",
-            "tags": {
-            },
-            "name": "[variables('appInsightsName')]",
-            "type": "Microsoft.OperationsManagement/solutions",
-            "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.OperationsManagement/solutions/', variables('appInsightsName'))]",
-            "dependsOn": [
-            ],
-            "properties": {
-              "workspaceResourceId": "[reference(concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-11-01-preview').customerId]"
-            },
-            "plan": {
-              "name": "[variables('appInsightsName')]",
-              "publisher": "Microsoft",
-              "product": "[Concat('OMSGallery/', 'ApplicationInsights')]",
-              "promotionCode": ""
-            }
-        },
-        {
-            "apiVersion": "2015-11-01-preview",
-            "location": "[resourceGroup().location]",
-            "tags": {
-            },
-            "name": "[variables('AzureActivity').Name]",
-            "type": "Microsoft.OperationsManagement/solutions",
-            "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.OperationsManagement/solutions/', variables('AzureActivity').Name)]",
-            "dependsOn": [
-            ],
-            "properties": {
-              "workspaceResourceId": "[reference(concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-11-01-preview').customerId]"
-            },
-            "plan": {
-              "name": "[variables('AzureActivity').Name]",
-              "publisher": "Microsoft",
-              "product": "[Concat('OMSGallery/', variables('AzureActivity').GalleryName)]",
-              "promotionCode": ""
-            }
-        },
-        {
-            "apiVersion": "2015-11-01-preview",
-            "location": "[resourceGroup().location]",
-            "tags": {
-            },
-            "name": "[variables('AzureWebAppsAnalytics').Name]",
-            "type": "Microsoft.OperationsManagement/solutions",
-            "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.OperationsManagement/solutions/', variables('AzureWebAppsAnalytics').Name)]",
-            "dependsOn": [
-            ],
-            "properties": {
-              "workspaceResourceId": "[reference(concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-11-01-preview').customerId]"
-            },
-            "plan": {
-              "name": "[variables('AzureWebAppsAnalytics').Name]",
-              "publisher": "Microsoft",
-              "product": "[Concat('OMSGallery/', variables('AzureWebAppsAnalytics').GalleryName)]",
-              "promotionCode": ""
-            }
         }
     ]
 }
