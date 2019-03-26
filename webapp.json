@@ -173,7 +173,7 @@
             "location": "[resourceGroup().location]",
             "tags": {
             },
-            "name": "[variables('ApplicationInsights').Name]",
+            "name": "[variables('appInsightsName')]",
             "type": "Microsoft.OperationsManagement/solutions",
             "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.OperationsManagement/solutions/', variables('appInsightsName'))]",
             "dependsOn": [
