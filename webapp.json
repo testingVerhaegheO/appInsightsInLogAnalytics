@@ -187,7 +187,7 @@
             "dependsOn": [
             ],
             "properties": {
-              "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
+              "workspaceResourceId": "[reference(concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-11-01-preview').customerId]"
             },
             "plan": {
               "name": "[variables('appInsightsName')]",
@@ -207,7 +207,7 @@
             "dependsOn": [
             ],
             "properties": {
-              "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
+              "workspaceResourceId": "[reference(concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-11-01-preview').customerId]"
             },
             "plan": {
               "name": "[variables('AzureActivity').Name]",
