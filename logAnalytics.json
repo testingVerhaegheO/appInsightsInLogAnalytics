@@ -26,18 +26,6 @@
       "ApplicationInsights": {
           "Name": "[Concat('ApplicationInsights', '(', parameters('workspaceName'), ')')]",
           "GalleryName": "ApplicationInsights"
-      },
-      "AzureActivity": {
-          "Name": "[Concat('AzureActivity', '(', parameters('workspaceName'), ')')]",
-          "GalleryName": "AzureActivity"
-      },
-      "KeyVaultAnalytics": {
-          "Name": "[Concat('KeyVaultAnalytics', '(', parameters('workspaceName'), ')')]",
-          "GalleryName": "KeyVaultAnalytics"
-      },
-      "AzureWebAppsAnalytics": {
-          "Name": "[Concat('AzureWebAppsAnalytics', '(', parameters('workspaceName'), ')')]",
-          "GalleryName": "AzureWebAppsAnalytics"
       }
   },
   "resources": [
