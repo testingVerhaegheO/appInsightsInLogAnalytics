@@ -167,6 +167,26 @@
                 "applicationId": "[parameters('siteName')]",
                 "workspaceResourceId": "[reference(concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-11-01-preview').customerId]"
             }
+        },
+        {
+            "apiVersion": "2015-11-01-preview",
+            "location": "[resourceGroup().location]",
+            "tags": {
+            },
+            "name": "[variables('ApplicationInsights').Name]",
+            "type": "Microsoft.OperationsManagement/solutions",
+            "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.OperationsManagement/solutions/', variables('appInsightsName'))]",
+            "dependsOn": [
+            ],
+            "properties": {
+              "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
+            },
+            "plan": {
+              "name": "[variables('appInsightsName')]",
+              "publisher": "Microsoft",
+              "product": "[Concat('OMSGallery/', 'ApplicationInsights')]",
+              "promotionCode": ""
+            }
         }
     ]
 }
