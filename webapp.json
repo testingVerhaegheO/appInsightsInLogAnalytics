@@ -166,7 +166,7 @@
             },
             "properties": {
                 "applicationId": "[parameters('siteName')]",
-                "workspaceResourceId": "[reference(resourceId('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')))]"
+                "workspaceResourceId": "[reference(concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-03-20').customerId]"
             }
         }
     ]
