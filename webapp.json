@@ -158,15 +158,14 @@
             "kind": "web",
             "location": "[resourceGroup().location]",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites/', parameters('siteName'))]",
-                "[concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
+                "[resourceId('Microsoft.Web/sites/', parameters('siteName'))]"
             ],
             "tags": {
                 "[concat('hidden-link:', resourceGroup().id, '/providers/Microsoft.Web/sites/', parameters('siteName'))]": "Resource"
             },
             "properties": {
                 "applicationId": "[parameters('siteName')]",
-                "workspaceResourceId": "[reference(concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-03-20').customerId]"
+                "workspaceResourceId": "[reference(concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')), '2015-11-01-preview').customerId]"
             }
         }
     ]

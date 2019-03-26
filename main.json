@@ -25,6 +25,7 @@
             "name": "webapp",
             "type": "Microsoft.Resources/deployments",
             "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments', 'loganalytics')]"
             ],
             "properties": {
                 "mode": "Incremental",
